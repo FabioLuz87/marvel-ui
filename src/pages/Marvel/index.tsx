@@ -79,21 +79,23 @@ export default function Marvel() {
                                 </Grid>
                             );
                         })}
-                        
+
+
+                        <Grid spacing={12} display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginBottom='1.5rem'>  
+                            <Pagination sx={{width:'800px',
+                                '& .MuiPagination-ul':{justifyContent: 'space-between'}}} 
+                                count={Math.ceil(marvelRedux.data.total/marvelRedux.data.limit)} 
+                                page={page} 
+                                onChange={handleChange}
+                                size='large' />
+                            <Box sx={{display: 'flex', justifyContent: 'center'}} 
+                            dangerouslySetInnerHTML={{__html: marvelRedux.attributionHTML}} /> 
+                        </Grid> 
                     </>
                 }
 
             </Grid>
-            <Grid spacing={6} display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginBottom='1.5rem'>  
-                <Pagination sx={{width:'800px',
-                    '& .MuiPagination-ul':{justifyContent: 'space-between'}}} 
-                    count={Math.ceil(marvelRedux.data.total/marvelRedux.data.limit)} 
-                    page={page} 
-                    onChange={handleChange}
-                    size='large' />
-                <Box sx={{display: 'flex', justifyContent: 'center'}} 
-                dangerouslySetInnerHTML={{__html: marvelRedux.attributionHTML}} /> 
-            </Grid>
+            
         </>
     );
 }
