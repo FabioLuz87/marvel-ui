@@ -2,7 +2,7 @@ import { Action } from "./actions";
 
 const initialState: object = {} 
 
-export default function reducer(state:object = initialState, action:Action) {
+export default function reducer(state:object = initialState, action: Action) {
     
     switch (action.type) {
         case 'getCharacters':

@@ -1,5 +1,3 @@
-
-
 interface IChange {
     type: 'change',
     payload: string
